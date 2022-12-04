@@ -1,7 +1,7 @@
 AUTHOR = 'sm4x'                                 # Site Author
 SITENAME = 'Pelican Minimal'                       # Your Sitename
 SITESUBTITLE = 'A Pelican basic theme.'
-SITEURL = ''
+SITEURL = 'http://maxschattauer.de'
 '''
     Base URL of your web site. Not defined by default, so it is best to specify your SITEURL; if you do not, feeds will not be generated with properly-formed URLs. If your site is available via HTTPS, this setting should begin with https:// — otherwise use http://. Then append your domain, with no trailing slash at the end. Example: SITEURL = 'https://example.com'
 '''
@@ -9,9 +9,11 @@ SITEURL = ''
 THEME = 'themes/minimal'
 
 PATH = 'content'
+'''
+    Path to content directory to be processed by Pelican. If undefined, and content path is not specified via an argument to the pelican command, Pelican will use the current working directory.
+'''
 
 TIMEZONE = 'Europe/Berlin'
-
 DEFAULT_LANG = 'en'
 
 # Feed generation is usually not desired when developing
@@ -35,14 +37,15 @@ DEFAULT_PAGINATION = 10
 
 ########################## ADDITIONAL SETTINGS ######################
 
-# can be useful in development, but set to False when you're ready to publish. Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
+'''
+Defines whether Pelican should use document-relative URLs or not. Only set this to True when developing/testing and only if you fully understand the effect it can have on links/feeds.
+'''
 
 # GITHUB_URL = 'http://github.com/sm4x/'
 # DISQUS_SITENAME = ''
 # REVERSE_CATEGORY_ORDER = True
 # LOCALE = "C"
-
 
 USE_FOLDER_AS_CATEGORY = True
 
@@ -165,11 +168,6 @@ IGNORE_FILES = ['.#*']
 OUTPUT_PATH = 'output/'
 '''
     Where to output the generated files. This should correspond to your web server’s virtual host root directory.
-'''
-
-# PATH
-'''
-    Path to content directory to be processed by Pelican. If undefined, and content path is not specified via an argument to the pelican command, Pelican will use the current working directory.
 '''
 
 PAGE_PATHS = ['pages']
