@@ -1,12 +1,10 @@
-AUTHOR = 'sm4x'                                 # Site Author
+AUTHOR = 'sm4x'                                 # Default author (usually your name)
 SITENAME = 'Pelican Minimal'                       # Your Sitename
 SITESUBTITLE = 'A Pelican basic theme.'
 SITEURL = 'http://maxschattauer.de'
 '''
     Base URL of your web site. Not defined by default, so it is best to specify your SITEURL; if you do not, feeds will not be generated with properly-formed URLs. If your site is available via HTTPS, this setting should begin with https:// — otherwise use http://. Then append your domain, with no trailing slash at the end. Example: SITEURL = 'https://example.com'
 '''
-
-THEME = 'themes/minimal'
 
 PATH = 'content'
 '''
@@ -15,6 +13,28 @@ PATH = 'content'
 
 TIMEZONE = 'Europe/Berlin'
 DEFAULT_LANG = 'en'
+
+THEME = 'themes/minimal'
+THEME_STATIC_DIR = 'theme'
+THEME_STATIC_PATHS = ['static']
+'''
+Static theme paths you want to copy. Default value is static, but if your theme has other static paths, you can put them here. If files or directories with the same names are included in the paths defined in this settings, they will be progressively overwritten.
+'''
+
+STATIC_PATHS = [
+    'images',
+    'static']
+
+'''
+    A list of directories (relative to PATH) in which to look for static files. Such files will be copied to the output directory without modification. Articles, pages, and other content source files will normally be skipped, so it is safe for a directory to appear both here and in PAGE_PATHS or ARTICLE_PATHS. Pelican’s default settings include the “images” directory here.
+'''
+
+EXTRA_PATH_METADATA = {
+    'static/robots.txt': {'path': 'robots.txt'},
+    'static/favicon.ico': {'path': 'favicon.ico'}}
+
+
+
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -34,6 +54,10 @@ SOCIAL = (('You can add links in your config file', '#'),
           ('Another social link', '#'),)
 
 DEFAULT_PAGINATION = 10
+
+DIRECT_TEMPLATES = ['index'] #, 'authors', 'categories', 'tags', 'archives']
+
+
 
 ########################## ADDITIONAL SETTINGS ######################
 
@@ -210,10 +234,7 @@ PLUGIN_PATHS = []
     A list of directories where to look for plugins. See Plugins.
 '''
 
-STATIC_PATHS = ['images']
-'''
-    A list of directories (relative to PATH) in which to look for static files. Such files will be copied to the output directory without modification. Articles, pages, and other content source files will normally be skipped, so it is safe for a directory to appear both here and in PAGE_PATHS or ARTICLE_PATHS. Pelican’s default settings include the “images” directory here.
-'''
+
 STATIC_EXCLUDES = []
 '''
     A list of directories to exclude when looking for static files.
