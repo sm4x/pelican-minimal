@@ -2,6 +2,8 @@ AUTHOR = 'sm4x'
 SITENAME = 'Pelican Minimal'
 SITEURL = ''
 
+THEME = 'themes/minimal'
+
 PATH = 'content'
 
 TIMEZONE = 'Europe/Berlin'
